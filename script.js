@@ -18,3 +18,13 @@ function addBookToLibrary(bookObj) {
     myLibrary.push(bookObj);
     return;
 }
+
+//displays each book on page
+function displayBooks(){
+    //iterate through the myLibrary array
+    myLibrary.forEach(book => {
+        //access each book and display it on the page
+
+    })
+        
+}
