@@ -1,3 +1,41 @@
+* {
+    color: rgb(210, 22, 20);
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;  
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    /* margin: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 8fr 1fr; */
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    /* width: fit-content; */
+    height: fit-content;
+}
+
+#library-container {
+    display: flex;
+   
+}
+
+ modal {
+    display: flex;
+ }
+
+#openModal {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    
+}
+
 .modal{
     position: fixed;
     top: 0;
@@ -23,5 +61,21 @@
     border-radius: 1rem;
     background-color: antiquewhite;
     padding: 2rem;
-
 }
+
+button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    transition: transform 0.7s ease-in-out;
+}
+
+button:hover {
+transform: rotate(360deg);
+}
+
+img{
+    width: 2rem;
+    height: 2rem;
+  }

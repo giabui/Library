@@ -3,6 +3,7 @@ const openModalButton = document.getElementById("openModal");
 const closeModalButton = document.getElementById("closeModal");
 const modal = document.getElementById("modal");
 
+
 // activates and deactivates modal 
 openModalButton.addEventListener("click", () => modal.classList.add("open"));
 closeModalButton.addEventListener("click", () => modal.classList.remove("open"));
@@ -16,7 +17,7 @@ function displayBooks(){
     myLibrary.forEach((book) => {
         // create a new "card" for each book 
         const bookCard = document.createElement("div");
-
+        
         // create card attributes (title, author, etc) and append them to the card
         const title = document.createElement("p"); 
         const author = document.createElement("p"); 
@@ -32,17 +33,16 @@ function displayBooks(){
         // append those card attributes to the card
         bookCard.append(title, author, pages, read);
         bookCard.style = "border: 2px solid black";
-
         // append bookCard to display
         display.appendChild(bookCard);
     });
 }
-// displayBooks(myLibrary); // testing
 
+// gets data from form to create new book 
 function storeBookData (form) {
     const formData = new FormData(form);
     const formDataObj = Object.fromEntries(formData);
-
+    // makes sure at least a title is passed in
     if (formDataObj.title){
         // adds default for other attributes 
         if(!formDataObj.author || !formDataObj.pages){
@@ -65,16 +65,14 @@ function storeBookData (form) {
         }else{
             formDataObj.read = "Not Read";
         }
-    
         myLibrary.push(formDataObj);
-        console.log(myLibrary);
         displayBooks();
-
         // resets form on screen
         document.getElementById("form").reset();
     }else{
         alert("Please add a title.");
         return;
     }
-    
 }
+
+//TODO: Add remove/delete button to html and add function
