@@ -49,6 +49,37 @@ body {
     transform: rotate(360deg);
 }
 
+#openModal img{
+    width: 3rem;
+    
+} 
+/*  <---------- library ---------> */
+
+#library-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+   
+}
+
+@media (min-width: 1167px) {
+    #library-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+
+/* style bookcard */
+#library-container > div {
+    margin: 1rem;
+    display:flex; 
+    flex-direction: column; 
+    align-items: center; 
+    border: 2px solid black; 
+    margin: 0.5rem;
+    padding: 0.3rem;
+
+}
+
 /* pop-up form */
 .modal{
     position: fixed;

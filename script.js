@@ -32,7 +32,6 @@ function displayBooks(){
 
         // append those card attributes to the card
         bookCard.append(title, author, pages, read);
-        bookCard.style = "border: 2px solid black";
         // append bookCard to display
         display.appendChild(bookCard);
     });
