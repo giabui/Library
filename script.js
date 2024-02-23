@@ -49,10 +49,13 @@ function storeBookData (form) {
     // makes sure at least a title is passed in
     if (formDataObj.title){
         // adds default for other attributes 
-        if(!formDataObj.author || !formDataObj.pages){
-            formDataObj.author = "Unknown";
-            formDataObj.pages = "Unknown";
-        }
+
+        if (!formDataObj.author) formDataObj.author = "Unknown";
+
+        if (!formDataObj.pages) formDataObj.pages = "Unknown";
+        
+        
+
         // check if book already in library
         for (const book of myLibrary){
             if (book.title === formDataObj.title){
