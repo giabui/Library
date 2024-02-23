@@ -16,14 +16,38 @@ img {
 }
 
 /* <---------- nav ----------> */
+/* use grid to space nav item and center them (logo)2fr 
+(search bar)1fr (add new book)1fr */
 nav {
     position: relative;
-    display: flex;
+    display: grid;
+    grid-area: 
+    'logo'
+    'search'
+    'add-book';
+    grid-template-areas: 
+    'logo search add-book';
+    grid-template-columns: 1fr 2fr 1fr;
+
+    color: rgb(244, 83, 87);
+    justify-content: baseline;
     align-items: center;
+}
+
+search {
+    display: grid;
+    grid-template-columns: auto 500px;
+    justify-content: center;
+    grid-area: search;
+}
+
+search > * {
+    margin: 0 1rem 0 1rem;
 }
 
 #library-icon{
     width: 5rem;
+    grid-area: logo;
 }
 
 h1 {
@@ -31,11 +55,13 @@ h1 {
     display: flex;
     align-items: center;
 }
+
  /* style "Add New Book" button */
  #openModal {
     position: fixed;
     right: 3rem;
     
+    grid-area: add-book;
     border: none;
     cursor: pointer;
     appearance: none;
@@ -51,6 +77,8 @@ h1 {
     width: 3rem;
     
 } 
+
+
 /*  <---------- library ---------> */
 
 #library-container {
