@@ -18,6 +18,10 @@
     z-index: 999;
 }
 
-/* #modal {
+#modal > form{
     border: 2px solid black; 
-} */
+    border-radius: 1rem;
+    background-color: antiquewhite;
+    padding: 2rem;
+
+}

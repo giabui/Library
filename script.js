@@ -43,27 +43,38 @@ function storeBookData (form) {
     const formData = new FormData(form);
     const formDataObj = Object.fromEntries(formData);
 
-    // check if book already in library
-    for (const book of myLibrary){
-        if (book.title === formDataObj.title){
-            // resets form on screen
-            document.getElementById("form").reset();
-
-            alert("This book already exists in your library. Try adding another.")
-            return;
+    if (formDataObj.title){
+        // adds default for other attributes 
+        if(!formDataObj.author || !formDataObj.pages){
+            formDataObj.author = "Unknown";
+            formDataObj.pages = "Unknown";
         }
-    }
-    // specifies read status on screen for user readability
-    if (formDataObj.read === "on"){
-        formDataObj.read = "Read";
-    }else{
-        formDataObj.read = "Not Read";
-    }
-  
-    myLibrary.push(formDataObj);
-    console.log(myLibrary);
-    displayBooks();
+        // check if book already in library
+        for (const book of myLibrary){
+            if (book.title === formDataObj.title){
+                // resets form on screen
+                document.getElementById("form").reset();
 
-    // resets form on screen
-    document.getElementById("form").reset();
+                alert("This book already exists in your library. Try adding another.")
+                return;
+            }
+        }
+        // specifies read status on screen for user readability
+        if (formDataObj.read === "on"){
+            formDataObj.read = "Read";
+        }else{
+            formDataObj.read = "Not Read";
+        }
+    
+        myLibrary.push(formDataObj);
+        console.log(myLibrary);
+        displayBooks();
+
+        // resets form on screen
+        document.getElementById("form").reset();
+    }else{
+        alert("Please add a title.");
+        return;
+    }
+    
 }
