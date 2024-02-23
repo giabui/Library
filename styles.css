@@ -135,6 +135,13 @@ h1 {
     padding: 2rem;
 }
 
+#library-container > div {
+    font-weight: bold;
+}
+
+#library-container > div:hover {
+    color: rgb(160, 160, 160);
+}
 
 /* <--------- footer ----------> */
 
@@ -146,8 +153,8 @@ footer {
     justify-content: center;
     align-items: center;
     align-self: center;
+    color: rgb(244, 83, 87);
 }
-
 
 
 
