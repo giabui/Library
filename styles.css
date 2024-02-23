@@ -1,5 +1,5 @@
 * {
-    color: rgb(210, 22, 20);
+    
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;  
 }
 
@@ -101,8 +101,10 @@ h1 {
     flex-direction: column; 
     align-items: center; 
     border: 2px solid black; 
+    color: rgb(255 255 255);
     margin: 0.5rem;
     padding: 0.3rem;
+    
 
 }
 
@@ -119,7 +121,6 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    
 }
 
 .modal.open {

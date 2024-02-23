@@ -28,9 +28,15 @@ function displayBooks(){
         author.innerText = "Author: " + book.author;
         pages.innerText = "Pages: " + book.pages;
         read.innerText = "Read Status: " + book.read;
-
+  
         // append those card attributes to the card
         bookCard.append(title, author, pages, read);
+
+        // randomize bookCard background colors if no background color is set
+        if(!book.backgroundColor){
+            book.backgroundColor = getRandomColor();
+        }
+        bookCard.style.backgroundColor = book.backgroundColor;
         // append bookCard to display
         display.appendChild(bookCard);
     });
@@ -74,3 +80,10 @@ function storeBookData (form) {
 }
 
 //TODO: Add remove/delete button to html and add function
+
+
+// generate random pastel background color for bookCard
+function getRandomColor(min, max){
+    return `hsla(${~~(360 * Math.random())}, 70%,  72%, 0.8)`;
+}
+
