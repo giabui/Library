@@ -86,11 +86,11 @@ function storeBookData (form) {
     }
 }
 
-//TODO: Add remove/delete button to html and add function
 
-
-// generate random pastel background color for bookCard
-function getRandomColor(min, max){
-    return `hsla(${~~(360 * Math.random())}, 70%,  72%, 0.8)`;
+// generates random brutalist background color for each book
+function getRandomColor() {
+    const hue = Math.floor(Math.random() * 360); // Random hue between 0 and 360
+    const saturation = Math.floor(Math.random() * 31) + 70; // Random saturation between 70% and 100%
+    const lightness = Math.floor(Math.random() * 31) + 41; // Random lightness between 41% and 72%
+    return `hsla(${hue}, ${saturation}%, ${lightness}%, 0.8)`; // Return HSLA color
 }
-
