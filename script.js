@@ -1,10 +1,22 @@
 const display = document.getElementById("library-container");//library books stored here
+const form = document.getElementById("form");
 const openModalButton = document.getElementById("openModal");
 const closeModalButton = document.getElementById("closeModal");
 const modal = document.getElementById("modal");
+const exitButton = document.getElementById("exitModalButton");
 
-// activates and deactivates modal 
-openModalButton.addEventListener("click", () => modal.classList.add("open"));
+// exits modal prematurely 
+exitButton.addEventListener("click", () => {
+    modal.style.display = "none";
+})
+
+
+// activates modal 
+openModalButton.addEventListener("click", () => {
+    modal.classList.add("open")
+    modal.style.display = "flex"; // allows modal to be redisplayed after previous exit
+});
+
 closeModalButton.addEventListener("click", () => modal.classList.remove("open"));
 
 let myLibrary = [];
@@ -23,8 +35,10 @@ function displayBooks(){
         const pages = document.createElement("p"); 
         const read = document.createElement("p"); 
         const deleteButton = document.createElement("button");
+        
 
         deleteButton.type = "button";
+        
 
         // deletes book from library and redisplays 
         deleteButton.addEventListener("click", () => {
@@ -36,7 +50,9 @@ function displayBooks(){
                 throw new Error(`${book} not found`);
             }
         });
-     
+        
+       
+
         // populate the attributes
         title.innerText = "Title: " + book.title;
         author.innerText = "Author: " + book.author;
@@ -44,6 +60,7 @@ function displayBooks(){
         read.innerText = "Read Status: " + book.read;
         deleteButton.innerHTML ="<img src='./img/trash-can.png'></img>";
         deleteButton.title = "Delete Book";
+   
         // append those card attributes to the card
         bookCard.append(title, author, pages, read, deleteButton);
 
@@ -59,9 +76,10 @@ function displayBooks(){
 
 // gets data from form to create new book 
 function storeBookData (form) {
+
     const formData = new FormData(form);
     const formDataObj = Object.fromEntries(formData);
-    // add counter to keep track of book indexes 
+
     // makes sure at least a title is passed in
     if (formDataObj.title){
         // adds default for other attributes 
@@ -111,10 +129,18 @@ function generateDummyBooks () {
         {title: "Once", author: "JK Rolling", pages: "Unknown", read: "Not Read"},
         {title: "Authur", author: "Unknown", pages: "345", read: "Not Read"},
         {title: "Cat In The Hat", author: "Dr. Suess", pages: "586", read: "Read"},
+        {title: "Harry Potter", author: "JK Rolling", pages: "333", read: "Not Read"},
+        {title: "The One Piece", author: "Unknown", pages: "34566", read: "Read"},
+        {title: "Gatsby", author: "Unknown", pages: "66896", read: "Read"},
+        {title: "Once", author: "JK Rolling", pages: "Unknown", read: "Not Read"},
+        {title: "Authur", author: "Unknown", pages: "345", read: "Not Read"},
+        {title: "Cat In The Hat", author: "Dr. Suess", pages: "586", read: "Read"},
     ]
     displayBooks();
 }
 
+
+    
 /*TODO:
 create log in method/ add backend component
 add a place to organize books based on alphabetical order, oldest, newest, read, not read
