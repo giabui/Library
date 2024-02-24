@@ -26,6 +26,17 @@ function displayBooks(){
 
         deleteButton.type = "button";
 
+        // deletes book from library and redisplays 
+        deleteButton.addEventListener("click", () => {
+            const book_idx = myLibrary.indexOf(book);
+            if (book_idx > -1) {
+                myLibrary.splice(book_idx, 1);
+                displayBooks();
+            } else {
+                throw new Error(`${book} not found`);
+            }
+        });
+     
         // populate the attributes
         title.innerText = "Title: " + book.title;
         author.innerText = "Author: " + book.author;
@@ -72,9 +83,7 @@ function storeBookData (form) {
         }else{
             formDataObj.read = "Not Read";
         }
-        // generate unique book id
-        formDataObj.bookId = Date.now();
-        console.log(formDataObj);
+
         myLibrary.push(formDataObj);
         displayBooks();
         // resets form on screen
@@ -84,7 +93,6 @@ function storeBookData (form) {
         return;
     }
 }
-
 
 // generates random brutalist background color for each book
 function getRandomColor() {
