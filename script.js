@@ -22,15 +22,19 @@ function displayBooks(){
         const author = document.createElement("p"); 
         const pages = document.createElement("p"); 
         const read = document.createElement("p"); 
-       
+        const deleteButton = document.createElement("button");
+
+        deleteButton.type = "button";
+
         // populate the attributes
         title.innerText = "Title: " + book.title;
         author.innerText = "Author: " + book.author;
         pages.innerText = "Pages: " + book.pages;
         read.innerText = "Read Status: " + book.read;
-  
+        deleteButton.innerHTML ="<img src='./img/trash-can.png'></img>";
+        deleteButton.title = "Delete Book";
         // append those card attributes to the card
-        bookCard.append(title, author, pages, read);
+        bookCard.append(title, author, pages, read, deleteButton);
 
         // randomize bookCard background colors if no background color is set
         if(!book.backgroundColor){
