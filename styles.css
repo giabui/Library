@@ -197,7 +197,16 @@ h1 {
     padding: 2rem;
 }
 
+/* <------------- Footer -------------> */
 
+footer {
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
 
-
+    color:rgb(244, 83, 87);
+}
 
