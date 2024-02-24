@@ -13,6 +13,7 @@ exitButton.addEventListener("click", () => {
 
 // activates modal 
 openModalButton.addEventListener("click", () => {
+    form.reset(); // clears form inputs after previous exit
     modal.classList.add("open")
     modal.style.display = "flex"; // allows modal to be redisplayed after previous exit
 });
