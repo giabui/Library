@@ -105,12 +105,12 @@ function getRandomColor() {
 // returns books for demonstration
 function generateDummyBooks () {
     myLibrary = [
-        {title: "Harry Potter", author: "JK Rolling", pages: "333", read: false},
-        {title: "The One Piece", author: "Unknown", pages: "34566", read: false},
-        {title: "Gatsby", author: "Unknown", pages: "66896", read: true},
-        {title: "Once", author: "JK Rolling", pages: "Unknown", read: false},
-        {title: "Authur", author: "Unknown", pages: "345", read: false},
-        {title: "Cat In The Hat", author: "Dr. Suess", pages: "586", read: true},
+        {title: "Harry Potter", author: "JK Rolling", pages: "333", read: "Not Read"},
+        {title: "The One Piece", author: "Unknown", pages: "34566", read: "Read"},
+        {title: "Gatsby", author: "Unknown", pages: "66896", read: "Read"},
+        {title: "Once", author: "JK Rolling", pages: "Unknown", read: "Not Read"},
+        {title: "Authur", author: "Unknown", pages: "345", read: "Not Read"},
+        {title: "Cat In The Hat", author: "Dr. Suess", pages: "586", read: "Read"},
     ]
     displayBooks();
 }
