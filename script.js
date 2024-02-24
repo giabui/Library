@@ -50,16 +50,12 @@ function displayBooks(){
 function storeBookData (form) {
     const formData = new FormData(form);
     const formDataObj = Object.fromEntries(formData);
+    // add counter to keep track of book indexes 
     // makes sure at least a title is passed in
     if (formDataObj.title){
         // adds default for other attributes 
-
         if (!formDataObj.author) formDataObj.author = "Unknown";
-
         if (!formDataObj.pages) formDataObj.pages = "Unknown";
-        
-        
-
         // check if book already in library
         for (const book of myLibrary){
             if (book.title === formDataObj.title){
@@ -76,6 +72,9 @@ function storeBookData (form) {
         }else{
             formDataObj.read = "Not Read";
         }
+        // generate unique book id
+        formDataObj.bookId = Date.now();
+        console.log(formDataObj);
         myLibrary.push(formDataObj);
         displayBooks();
         // resets form on screen
