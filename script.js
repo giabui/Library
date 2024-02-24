@@ -7,7 +7,7 @@ const modal = document.getElementById("modal");
 openModalButton.addEventListener("click", () => modal.classList.add("open"));
 closeModalButton.addEventListener("click", () => modal.classList.remove("open"));
 
-const myLibrary = [];
+let myLibrary = [];
 
 // displays each book on page
 function displayBooks(){
@@ -65,7 +65,7 @@ function storeBookData (form) {
     // makes sure at least a title is passed in
     if (formDataObj.title){
         // adds default for other attributes 
-        if (!formDataObj.author) formDataObj.author = "Unknown";
+        if (!formDataObj.author ) formDataObj.author = "Unknown";
         if (!formDataObj.pages) formDataObj.pages = "Unknown";
         // check if book already in library
         for (const book of myLibrary){
@@ -100,4 +100,17 @@ function getRandomColor() {
     const saturation = Math.floor(Math.random() * 31) + 70; // Random saturation between 70% and 100%
     const lightness = Math.floor(Math.random() * 31) + 41; // Random lightness between 41% and 72%
     return `hsla(${hue}, ${saturation}%, ${lightness}%, 0.8)`; // Return HSLA color
+}
+
+// returns books for demonstration
+function generateDummyBooks () {
+    myLibrary = [
+        {title: "Harry Potter", author: "JK Rolling", pages: "333", read: false},
+        {title: "The One Piece", author: "Unknown", pages: "34566", read: false},
+        {title: "Gatsby", author: "Unknown", pages: "66896", read: true},
+        {title: "Once", author: "JK Rolling", pages: "Unknown", read: false},
+        {title: "Authur", author: "Unknown", pages: "345", read: false},
+        {title: "Cat In The Hat", author: "Dr. Suess", pages: "586", read: true},
+    ]
+    displayBooks();
 }
