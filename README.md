@@ -16,6 +16,7 @@ This project serves as a platform for me to enhance my JavaScript skills. It fac
 * Toggle read status for each book
 * Display of each book on the screen
 * Easy opening and closing of the modal window
+* Random background color generation for each book
 
 ## Upcoming Features:
 
@@ -31,3 +32,4 @@ This project serves as a platform for me to enhance my JavaScript skills. It fac
 * Utilizing event listeners for user interaction
 * Employing JavaScript objects for storing and retrieving user data
 * Writing clean and readable code
+* Randomizing background color and implementing it through JavaScript
