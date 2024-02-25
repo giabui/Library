@@ -10,7 +10,6 @@ exitButton.addEventListener("click", () => {
     modal.style.display = "none";
 })
 
-
 // activates modal 
 openModalButton.addEventListener("click", () => {
     form.reset(); // clears form inputs after previous exit
