@@ -1,6 +1,9 @@
 # Library
 
-This is my implementation of the Library project from The Odin Project. Try it [here](https://giahenville.github.io/Library/).
+Inspired by brutalist web design, this is my implementation of the Library project from The Odin Project. Try it [here](https://giahenville.github.io/Library/).
+
+<img src="./img/demo1.png" alt="Demo image for library" width="600px">
+<img src="./img/demo1.png" alt="Demo image for library" width="600px">
 
 ## Description:
 
