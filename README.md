@@ -11,6 +11,7 @@ This project serves as a platform for me to enhance my JavaScript skills. It fac
 
 ## Features:
 
+* Fully responsive to fit various screen sizes
 * Addition of books to the library via a modal window
 * Deletion of books
 * Toggle read status for each book
