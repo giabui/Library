@@ -33,3 +33,4 @@ This project serves as a platform for me to enhance my JavaScript skills. It fac
 * Employing JavaScript objects for storing and retrieving user data
 * Writing clean and readable code
 * Randomizing background color and implementing it through JavaScript
+* Utilize CSS positioning 
