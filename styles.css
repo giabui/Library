@@ -162,7 +162,7 @@ h1 {
     font-weight: bold;
 }
 
-#library-container > div > button {
+#library-container > div > div > .deleteButton {
     width: 40px;
     border: none;
     cursor: pointer;
@@ -172,6 +172,19 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
+#library-container > div > div > .readStatusToggle {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+}
+
+#library-container > div > .buttonsDiv {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-items: center;
+} 
 
 /* pop-up form */
 .modal{
