@@ -159,5 +159,4 @@ function generateDummyBooks () {
 create log in method/ add backend component
 add a place to organize books based on alphabetical order, oldest, newest, read, not read
 make it able to search for books in search bar and show only books that match the name or are similiar (implement fuzzy search)
-make readme.md and make sure to mention all features
-add toggle for read status */ 
+make readme.md and make sure to mention all features */ 
