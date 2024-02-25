@@ -33,13 +33,18 @@ function displayBooks(){
         const title = document.createElement("p"); 
         const author = document.createElement("p"); 
         const pages = document.createElement("p"); 
-        const read = document.createElement("p"); 
+        const buttonsDiv = document.createElement("div");  // div for holding buttons for styling
         const deleteButton = document.createElement("button");
+        const readStatusToggle = document.createElement("button");
         
-
+        buttonsDiv.classList.add("buttonsDiv");
         deleteButton.type = "button";
+        deleteButton.classList.add("deleteButton");
+        readStatusToggle.type = "button";
+        readStatusToggle.classList.add("readStatusToggle");
         
-
+        // initially read status is equal to user form input
+        readStatusToggle.innerText = book.read;
         // deletes book from library and redisplays 
         deleteButton.addEventListener("click", () => {
             const book_idx = myLibrary.indexOf(book);
@@ -50,19 +55,30 @@ function displayBooks(){
                 throw new Error(`${book} not found`);
             }
         });
-        
-       
+
+        // updates read status on books
+        readStatusToggle.addEventListener("click", () => {
+            if ( readStatusToggle.innerText === "Read") {
+                readStatusToggle.innerText = "Not Read";
+            }else {
+                readStatusToggle.innerText = "Read";
+            }
+        });
 
         // populate the attributes
         title.innerText = "Title: " + book.title;
         author.innerText = "Author: " + book.author;
         pages.innerText = "Pages: " + book.pages;
-        read.innerText = "Read Status: " + book.read;
+        // read.innerText = "Read Status: ";
+        // read.appendChild(readStatusToggle);
         deleteButton.innerHTML ="<img src='./img/trash-can.png'></img>";
         deleteButton.title = "Delete Book";
    
-        // append those card attributes to the card
-        bookCard.append(title, author, pages, read, deleteButton);
+       // append buttons to single div for styling
+        buttonsDiv.append(readStatusToggle, deleteButton);
+
+         // append those card attributes to the card
+        bookCard.append(title, author, pages, buttonsDiv);
 
         // randomize bookCard background colors if no background color is set
         if(!book.backgroundColor){
@@ -138,12 +154,10 @@ function generateDummyBooks () {
     ]
     displayBooks();
 }
-
-
     
-/*TODO:
+/* TODO:
 create log in method/ add backend component
 add a place to organize books based on alphabetical order, oldest, newest, read, not read
 make it able to search for books in search bar and show only books that match the name or are similiar (implement fuzzy search)
 make readme.md and make sure to mention all features
-add toggle for read status*/ 
+add toggle for read status */ 
