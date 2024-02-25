@@ -15,6 +15,11 @@ searchBar.addEventListener("keyup", () => {
         const title = bookCard.querySelector("p.title").innerText.toLowerCase(); 
         const author = bookCard.querySelector("p.author").innerText.toLowerCase(); 
         
+        // FIX when x is pressed on input, allow all books to reappear
+        if (!searchText) {
+            bookCard.style.display = "block";
+        }
+
         // Check if the title or author matches the search query
         if (title.includes(searchText) || author.includes(searchText)) {
             bookCard.style.display = "block"; // Show the book card if it matches
@@ -22,6 +27,7 @@ searchBar.addEventListener("keyup", () => {
             bookCard.style.display = "none"; // Hide the book card if it doesn't match
         }
     });
+
 });
 
 
@@ -181,4 +187,5 @@ function generateDummyBooks () {
 /* TODO:
 create log in method/ add backend component
 add a place to organize books based on alphabetical order, oldest, newest, read, not read
-make readme.md and make sure to mention all features */ 
+make readme.md and make sure to mention all features 
+fix search bar so that when x is pressed, all books reappear */ 
