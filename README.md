@@ -1,6 +1,6 @@
 # Library
 
-Inspired by brutalist web design, this is my implementation of the Library project from The Odin Project. Try it [here](https://giahenville.github.io/Library/).
+This is my implementation of the Library project from The Odin Project. Try it [here](https://giahenville.github.io/Library/).
 
 <img src="./img/demo1.png" alt="Demo image for library" width="600px">
 <img src="./img/demo2.png" alt="Demo image for library" width="600px">
@@ -18,12 +18,12 @@ This project serves as a platform for me to enhance my JavaScript skills. It fac
 * Display of each book on the screen
 * Easy opening and closing of the modal window
 * Random background color generation for each book
+* Book title and author search functionality within the library using a search bar
 
 ## Upcoming Features:
 
 * Ability for users to organize books by order of addition, alphabetical order, or read status
 * User authentication for saving library history or implementing backend functionality
-* Book search functionality within the library using a search bar
 
 ## Skills I learned:
 
@@ -35,3 +35,6 @@ This project serves as a platform for me to enhance my JavaScript skills. It fac
 * Writing clean and readable code
 * Randomizing background color and implementing it through JavaScript
 * Utilize CSS positioning 
+* Implementing background blur on modal
+* 
+* 

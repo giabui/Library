@@ -4,6 +4,26 @@ const openModalButton = document.getElementById("openModal");
 const closeModalButton = document.getElementById("closeModal");
 const modal = document.getElementById("modal");
 const exitButton = document.getElementById("exitModalButton");
+const searchBar = document.getElementById("search-bar");
+
+// searches for books matching the title or the author
+searchBar.addEventListener("keyup", () => {
+    const searchText = searchBar.value.toLowerCase(); // Get the value entered in the search bar
+
+    // Iterate through each book card
+    Array.from(display.children).forEach(bookCard => {
+        const title = bookCard.querySelector("p.title").innerText.toLowerCase(); 
+        const author = bookCard.querySelector("p.author").innerText.toLowerCase(); 
+        
+        // Check if the title or author matches the search query
+        if (title.includes(searchText) || author.includes(searchText)) {
+            bookCard.style.display = "block"; // Show the book card if it matches
+        } else {
+            bookCard.style.display = "none"; // Hide the book card if it doesn't match
+        }
+    });
+});
+
 
 // exits modal prematurely 
 exitButton.addEventListener("click", () => {
@@ -23,15 +43,18 @@ let myLibrary = [];
 
 // displays each book on page
 function displayBooks(){
+    
     display.innerHTML = "";
     // iterate through the array and access each book
     myLibrary.forEach((book) => {
         // create a new "card" for each book 
         const bookCard = document.createElement("div");
-        
+
         // create card attributes (title, author, etc) and append them to the card
         const title = document.createElement("p"); 
+        title.classList.add("title");
         const author = document.createElement("p"); 
+        author.classList.add("author");
         const pages = document.createElement("p"); 
         const buttonsDiv = document.createElement("div");  // div for holding buttons for styling
         const deleteButton = document.createElement("button");
@@ -158,5 +181,4 @@ function generateDummyBooks () {
 /* TODO:
 create log in method/ add backend component
 add a place to organize books based on alphabetical order, oldest, newest, read, not read
-make it able to search for books in search bar and show only books that match the name or are similiar (implement fuzzy search)
 make readme.md and make sure to mention all features */ 
