@@ -6,6 +6,16 @@ const modal = document.getElementById("modal");
 const exitButton = document.getElementById("exitModalButton");
 const searchBar = document.getElementById("search-bar");
 
+// gets the x button to work in the search bar
+searchBar.addEventListener("search", function(event) {
+    if (searchBar.value.trim() === "") {
+        // If search bar is empty, display all books
+        Array.from(display.children).forEach(bookCard => {
+            bookCard.style.display = "block";
+        });
+    }
+});
+
 // searches for books matching the title or the author
 searchBar.addEventListener("keyup", () => {
     const searchText = searchBar.value.toLowerCase(); // Get the value entered in the search bar
@@ -30,15 +40,7 @@ searchBar.addEventListener("keyup", () => {
 
 });
 
-// gets the x button to work in the search bar
-searchBar.addEventListener("search", function(event) {
-    if (searchBar.value.trim() === "") {
-        // If search bar is empty, display all books
-        Array.from(display.children).forEach(bookCard => {
-            bookCard.style.display = "block";
-        });
-    }
-});
+
 
 
 // exits modal prematurely 
