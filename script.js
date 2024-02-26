@@ -5,10 +5,22 @@ const closeModalButton = document.getElementById("closeModal");
 const modal = document.getElementById("modal");
 const exitButton = document.getElementById("exitModalButton");
 const searchBar = document.getElementById("search-bar");
+const bookOrder = document.getElementById("bookOrder");
+
+// order books a-z
+
+// order books newest
+
+// order books oldest
+
+// order books read
+
+// order books not read
+
 
 // gets the x button to work in the search bar
 searchBar.addEventListener("search", function(event) {
-    if (searchBar.value.trim() === "") {
+    if (searchBar.value.trim() === "") { 
         // If search bar is empty, display all books
         Array.from(display.children).forEach(bookCard => {
             bookCard.style.display = "block";
@@ -39,9 +51,6 @@ searchBar.addEventListener("keyup", () => {
     });
 
 });
-
-
-
 
 // exits modal prematurely 
 exitButton.addEventListener("click", () => {
@@ -199,5 +208,4 @@ function generateDummyBooks () {
 /* TODO:
 create log in method/ add backend component
 add a place to organize books based on alphabetical order, oldest, newest, read, not read
-make readme.md and make sure to mention all features 
-fix search bar so that when x is pressed, all books reappear */ 
+make readme.md and make sure to mention all features  */ 

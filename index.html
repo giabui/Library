@@ -19,7 +19,17 @@
 
             <button type="button" id="openModal" title="Add New Book"> <img src="./img/add.png" alt="Add new book button." ></button>
         </nav>
-    
+        
+        <!-- drop down menu to organize books -->
+        <label for="bookOrder">Order by:</label>
+        <select name="bookOrder" id="bookOrder">
+            <option value="a-z" id = "a-z" >A - Z</option>
+            <option value="newest" id = "newest" >Newest</option>
+            <option value="oldest" id = "oldest" >Oldest</option>
+            <option value="not-read" id = "not-read">Not Read</option>
+            <option value="read" id = "read" >Read</option>
+        </select>
+
         <div id="library-container"></div>
         
         <footer id="footer">
