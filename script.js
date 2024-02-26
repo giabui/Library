@@ -30,6 +30,16 @@ searchBar.addEventListener("keyup", () => {
 
 });
 
+// gets the x button to work in the search bar
+searchBar.addEventListener("search", function(event) {
+    if (searchBar.value.trim() === "") {
+        // If search bar is empty, display all books
+        Array.from(display.children).forEach(bookCard => {
+            bookCard.style.display = "block";
+        });
+    }
+});
+
 
 // exits modal prematurely 
 exitButton.addEventListener("click", () => {
