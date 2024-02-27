@@ -5,8 +5,8 @@ This is my implementation of the Library project from The Odin Project. Try it [
 <img src="./img/demo1.png" alt="Demo image for library" width="600px">
 <img src="./img/demo2.png" alt="Demo image for library" width="600px">
 
-<img src="./img/responsive1.png" alt="Demo image for library" width="500px">
-<img src="./img/responsive2.png" alt="Demo image for library" width="500px">
+<img src="./img/responsive1.png" alt="Demo image for library" width="500px" height="300px">
+<img src="./img/responsive2.png" alt="Demo image for library" width="500px" height="300px">
 
 ## Description:
 
