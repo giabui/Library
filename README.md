@@ -5,6 +5,9 @@ This is my implementation of the Library project from The Odin Project. Try it [
 <img src="./img/demo1.png" alt="Demo image for library" width="600px">
 <img src="./img/demo2.png" alt="Demo image for library" width="600px">
 
+<img src="./img/responsive1.png" alt="Demo image for library" width="600px">
+<img src="./img/responsive1.png" alt="Demo image for library" width="600px">
+
 ## Description:
 
 This project serves as a platform for me to enhance my JavaScript skills. It facilitates users in managing their book collection, tracking books they want to read or have already read.
