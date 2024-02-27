@@ -6,6 +6,9 @@ const modal = document.getElementById("modal");
 const exitButton = document.getElementById("exitModalButton");
 const searchBar = document.getElementById("search-bar");
 
+
+let myLibrary = [];
+
 // gets the x button to work in the search bar
 searchBar.addEventListener("search", function(event) {
     if (searchBar.value.trim() === "") { 
@@ -54,7 +57,25 @@ openModalButton.addEventListener("click", () => {
 
 closeModalButton.addEventListener("click", () => modal.classList.remove("open"));
 
-let myLibrary = [];
+
+// returns books for demonstration
+function generateDummyBooks () {
+    myLibrary = [
+        {title: "Harry Potter", author: "JK Rolling", pages: "333", read: "Not Read"},
+        {title: "The One Piece", author: "Eiichiro Oda", pages: "34566", read: "Read"},
+        {title: "Potato", author: "Unknown", pages: "378", read: "Read"},
+        {title: "Inside Out", author: "Meg LeFauve", pages: "Unknown", read: "Not Read"},
+        {title: "Brave", author: "Unknown", pages: "345", read: "Not Read"},
+        {title: "Fancy Cakes", author: "Dr. Suess", pages: "586", read: "Read"},
+        {title: "The Avatar: Last Air Bender", author: "Michael Dante DiMartino", pages: "777", read: "Not Read"},
+        {title: "Demon Slayer", author: "Unknown", pages: "34566", read: "Read"},
+        {title: "Cute Animals", author: "Unknown", pages: "97", read: "Read"},
+        {title: "SpongeBob SquarePants", author: "Stephen Hillenburg", pages: "Unknown", read: "Not Read"},
+        {title: "Blues Clues", author: "Unknown", pages: "345", read: "Not Read"},
+        {title: "Happy Day", author: "Unknown", pages: "586", read: "Read"},
+    ]
+    displayBooks();
+}
 
 // displays each book on page
 function displayBooks(){
@@ -172,23 +193,4 @@ function getRandomColor() {
     const saturation = Math.floor(Math.random() * 31) + 70; // Random saturation between 70% and 100%
     const lightness = Math.floor(Math.random() * 31) + 41; // Random lightness between 41% and 72%
     return `hsla(${hue}, ${saturation}%, ${lightness}%, 0.8)`; // Return HSLA color
-}
-
-// returns books for demonstration
-function generateDummyBooks () {
-    myLibrary = [
-        {title: "Harry Potter", author: "JK Rolling", pages: "333", read: "Not Read"},
-        {title: "The One Piece", author: "Eiichiro Oda", pages: "34566", read: "Read"},
-        {title: "Potato", author: "Unknown", pages: "378", read: "Read"},
-        {title: "Inside Out", author: "Meg LeFauve", pages: "Unknown", read: "Not Read"},
-        {title: "Brave", author: "Unknown", pages: "345", read: "Not Read"},
-        {title: "Fancy Cakes", author: "Dr. Suess", pages: "586", read: "Read"},
-        {title: "The Avatar: Last Air Bender", author: "Michael Dante DiMartino", pages: "777", read: "Not Read"},
-        {title: "Demon Slayer", author: "Unknown", pages: "34566", read: "Read"},
-        {title: "Cute Animals", author: "Unknown", pages: "97", read: "Read"},
-        {title: "SpongeBob SquarePants", author: "Stephen Hillenburg", pages: "Unknown", read: "Not Read"},
-        {title: "Blues Clues", author: "Unknown", pages: "345", read: "Not Read"},
-        {title: "Happy Day", author: "Unknown", pages: "586", read: "Read"},
-    ]
-    displayBooks();
 }

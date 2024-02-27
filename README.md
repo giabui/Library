@@ -17,13 +17,7 @@ This project serves as a platform for me to enhance my JavaScript skills. It fac
 * Toggle read status for each book
 * Display of each book on the screen
 * Easy opening and closing of the modal window
-* Random background color generation for each book
 * Book title and author search functionality within the library using a search bar
-
-## Upcoming Features:
-
-* Ability for users to organize books by order of addition, alphabetical order, or read status
-* User authentication for saving library history or implementing backend functionality
 
 ## Skills I learned:
 
@@ -36,5 +30,3 @@ This project serves as a platform for me to enhance my JavaScript skills. It fac
 * Randomizing background color and implementing it through JavaScript
 * Utilize CSS positioning 
 * Implementing background blur on modal
-* 
-* 
