@@ -6,6 +6,7 @@ const modal = document.getElementById("modal");
 const exitButton = document.getElementById("exitModalButton");
 const searchBar = document.getElementById("search-bar");
 
+generateDummyBooks(); // call all the time so page always opens with books in library
 
 // gets the x button to work in the search bar
 searchBar.addEventListener("search", function(event) {
@@ -193,4 +194,3 @@ function generateDummyBooks () {
     ]
     displayBooks();
 }
-generateDummyBooks(); // call all the time so page always opens with books in library
